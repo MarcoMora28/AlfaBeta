@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Escribir</title>
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/components-v2.css">
+    <style>
+        .barramenu {
+            background-image: linear-gradient(to right, rgba(43, 170, 45), rgba(58, 204, 60));
+        }
+
+        .sinborde {
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="barramenu border-4 border-brown rounded-lg">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+			  Icon when menu is closed.
+  
+			  Heroicon name: outline/menu
+  
+			  Menu open: "hidden", Menu closed: "block"
+			-->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!--
+			  Icon when menu is open.
+  
+			  Heroicon name: outline/x
+  
+			  Menu open: "block", Menu closed: "hidden"
+			-->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="block lg:hidden h-8 w-auto" src="img/logoab.png" alt="">
+                        <img class="hidden lg:block h-8 w-auto" src="img/logoab.png" alt="">
+                    </div>
+                    <div class="hidden sm:block sm:ml-6">
+                        <div class="flex space-x-4">
+                            <a href="perfil"
+                                class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Perfil</a>
+
+                            <a href="abecedario"
+                                class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Abecedario</a>
+
+                            <a href="grabar"
+                                class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Grabar</a>
+
+                            <a href="escribir"
+                                class="bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Escribir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="perfil" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    aria-current="page">Perfil</a>
+
+                <a href="#"
+                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Abecedario</a>
+
+                <a href="#"
+                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Reconocimiento</a>
+
+                <a href="#"
+                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">TextToSpeak</a>
+            </div>
+        </div>
+    </nav>
+    <div class="p-2">
+        <div align="center">
+            <p class="font-mono font-bold text-3xl">¿Que quieres adivinar?</p>
+            <select id="adivinar" onchange="queAdivinar()"
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
+                <option value="" disabled="disabled" selected="true">-Seleccionar-</option>
+                <option value="colores">Colores</option>
+                <option value="animales">Animales</option>
+                <option value="numeros">Numeros</option>
+            </select>
+        </div>
+        <div id="agregar" class="p-2" align="center"></div>
+        <div class="py-1" align="center">
+            <button id="btnDecir" type="button"
+                class="inline-flex p-3 items-center h-16 w-16 border border-1 rounded-full shadow-2xl hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <img src="img/altavoz.png">
+            </button>
+            <br><br>
+            <textarea id="texto" class="w-100" placeholder="Escribe algo"></textarea>
+        </div>
+        <div id="respuesta" align="center"></div>
+    </div>
+    <script src="js/escribir.js"></script>
+</body>
+
+</html>

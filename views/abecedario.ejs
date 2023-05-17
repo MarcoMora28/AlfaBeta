@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Abecedario</title>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<link rel="stylesheet" type="text/css" href="/css/components-v2.css">
+	<style>
+		.barramenu {
+			background-image: linear-gradient(to right, rgba(43, 170, 45), rgba(58, 204, 60 ));
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="barramenu border-4 border-brown rounded-lg">
+		<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+			<div class="relative flex items-center justify-between h-16">
+				<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+					<!-- Mobile menu button-->
+					<button type="button"
+						class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+						aria-controls="mobile-menu" aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<!--
+			  Icon when menu is closed.
+  
+			  Heroicon name: outline/menu
+  
+			  Menu open: "hidden", Menu closed: "block"
+			-->
+						<svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+						<!--
+			  Icon when menu is open.
+  
+			  Heroicon name: outline/x
+  
+			  Menu open: "block", Menu closed: "hidden"
+			-->
+						<svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+				<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+					<div class="flex-shrink-0 flex items-center">
+						<img class="block lg:hidden h-8 w-auto"
+							src="img/logoab.png" alt="">
+						<img class="hidden lg:block h-8 w-auto"
+							src="img/logoab.png"
+							alt="">
+					</div>
+					<div class="hidden sm:block sm:ml-6">
+						<div class="flex space-x-4">
+							<a href="perfil" class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Perfil</a>
+
+							<a href="abecedario"
+								class="bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Abecedario</a>
+
+							<a href="grabar"
+								class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Grabar</a>
+
+							<a href="escribir"
+								class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Escribir</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Mobile menu, show/hide based on menu state. -->
+		<div class="sm:hidden" id="mobile-menu">
+			<div class="px-2 pt-2 pb-3 space-y-1">
+				<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+				<a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+					aria-current="page">Perfil</a>
+
+				<a href="#"
+					class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Abecedario</a>
+
+				<a href="#"
+					class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Reconocimiento</a>
+
+				<a href="#"
+					class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">TextToSpeak</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="mx-6 p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8">
+		<!--A-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg focus-within:ring-6 focus-within:ring-offset-2 focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronA.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirA">
+			</div>
+		</div>
+		<!--B-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2 focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronB.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirB">
+			</div>
+		</div>
+		<!--C-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronC.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirC">
+			</div>
+		</div>
+		<!--D-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronD.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirD">
+			</div>
+		</div>
+		<!--E-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronE.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirE">
+			</div>
+		</div>
+		<!--F-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronF.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirF">
+			</div>
+		</div>
+		<!--G-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronG.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirG">
+			</div>
+		</div>
+		<!--H-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronH.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirH">
+			</div>
+		</div>
+		<!--I-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronI.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirI">
+			</div>
+		</div>
+		<!--J-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronJ.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirJ">
+			</div>
+		</div>
+		<!--K-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronK.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirK">
+			</div>
+		</div>
+		<!--L-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronL.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirL">
+			</div>
+		</div>
+		<!--M-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronM.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirM">
+			</div>
+		</div>
+		<!--N-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronN.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirN">
+			</div>
+		</div>
+		<!--Ñ-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronÑ.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirÑ">
+			</div>
+		</div>
+		<!--O-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronO.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirO">
+			</div>
+		</div>
+		<!--P-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronP.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirP">
+			</div>
+		</div>
+		<!--Q-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronQ.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirQ">
+			</div>
+		</div>
+		<!--R-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronR.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirR">
+			</div>
+		</div>
+		<!--S-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronS.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirS">
+			</div>
+		</div>
+		<!--T-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronT.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirT">
+			</div>
+		</div>
+		<!--U-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronU.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirU">
+			</div>
+		</div>
+		<!--V-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronV.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirV">
+			</div>
+		</div>
+		<!--W-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronW.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirW">
+			</div>
+		</div>
+		<!--X-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronX.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirX">
+			</div>
+		</div>
+		<!--Y-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronY.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirY">
+			</div>
+		</div>
+		<!--Z-->
+		<div class="relative">
+			<div
+				class="group block w-full aspect-w-10 aspect-h-10 rounded-lg  focus-within:ring-6 focus-within:ring-offset-2   focus-within:ring-pizarron overflow-hidden shadow-2xl">
+				<img src="img/pizarronZ.jpg" alt="" class="object-cover pointer-events-none group-hover:opacity-75">
+				<input type="button" class="absolute inset-0 focus:outline-none" id="decirZ">
+			</div>
+		</div>
+
+	</div>
+	<script src="js/botonVoz.js"></script>
+</body>
+
+</html>

@@ -29,7 +29,7 @@ function queAdivinar() {
 
 btnDecir.addEventListener('click', () => {
     const comparar = document.getElementById('comparar');
-    if (texto.value == comparar.value) {
+    if (texto.value.toLowerCase() == comparar.value) {
         speechSynthesis.cancel();
         speechSynthesis.speak(new SpeechSynthesisUtterance(texto.value + 'es correcto'));
         respuesta.innerHTML = '<p>Respuesta correcta</p>';

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset='utf-8'>
@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <% if (login) { %>
     <nav class="barramenu border-4 border-brown rounded-lg">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
@@ -40,13 +41,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        <!--
-			  Icon when menu is open.
-  
-			  Heroicon name: outline/x
-  
-			  Menu open: "block", Menu closed: "hidden"
-			-->
                         <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,7 +58,7 @@
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
-                            <a href="perfil"
+                            <a href="/"
                                 class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Perfil</a>
 
                             <a href="abecedario"
@@ -75,6 +69,9 @@
 
                             <a href="escribir"
                                 class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Escribir</a>
+
+                                <a href="visualizar"
+                                    class="hover:bg-brown text-white px-3 py-2 rounded-md font-mono italic font-bold text-lg">Visualizar</a>
                         </div>
                     </div>
                 </div>
@@ -83,18 +80,21 @@
         <!-- Mobile menu, show/hide based on menu state. -->
         <div class="sm:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="perfil" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+
+                <a href="/" class="hover:bg-brown text-white block px-3 py-2 rounded-md text-base font-medium"
                     aria-current="page">Perfil</a>
 
-                <a href="#"
-                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Abecedario</a>
+                <a href="abecedario"
+                    class="hover:bg-brown text-white block px-3 py-2 rounded-md text-base font-medium">Abecedario</a>
 
-                <a href="#"
-                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Reconocimiento</a>
+                <a href="grabar"
+                    class="bg-brown text-white block px-3 py-2 rounded-md text-base font-medium">Grabar</a>
 
-                <a href="#"
-                    class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">TextToSpeak</a>
+                <a href="escribir"
+                    class="hover:bg-brown text-white block px-3 py-2 rounded-md text-base font-medium">Escribir</a>
+
+                    <a href="visualizar"
+                    class="hover:bg-brown text-white block px-3 py-2 rounded-md text-base font-medium">Visualizar</a>
             </div>
         </div>
     </nav>
@@ -120,6 +120,37 @@
         </div>
         <div id="respuesta" align="center"></div>
     </div>
+    <%} else { %>
+        <div class="bg-white min-h-full flex flex-col lg:relative">
+            <div class="flex-grow flex flex-col">
+                <main class="flex-grow flex flex-col bg-white">
+                    <div class="flex-grow mx-auto max-w-7xl w-full flex flex-col px-4 sm:px-6 lg:px-8">
+                        <div class="flex-shrink-0 pt-10 sm:pt-16">
+                            <a href="login" class="inline-flex">
+                                <img class="h-12 w-auto" src="img/logoab.png" alt="">
+                            </a>
+                        </div>
+                        <div class="flex-shrink-0 my-auto py-16 sm:py-32">
+                            <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wide">Error</p>
+                            <h1 class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Sesión
+                                cerrada</h1>
+                            <p class="mt-2 text-base text-gray-500">Debes iniciar sesión para poder usar la
+                                aplicación.</p>
+                            <div class="mt-6">
+                                <a href="login"
+                                    class="text-base font-medium text-indigo-600 hover:text-indigo-500">Iniciar
+                                    sesión<span aria-hidden="true"> &rarr;</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <br><br><br><br><br>
+            <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                <img class="absolute inset-0 h-full w-full object-cover" src="img/letras.jpg" alt="">
+            </div>
+        </div>
+        <% } %>
     <script src="js/grabar.js"></script>
 </body>
 
